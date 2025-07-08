@@ -1,5 +1,5 @@
-[![Build](https://github.com/magemonkeystudio/fabled-enchants/actions/workflows/release.yml/badge.svg?branch=main)](https://repo1.maven.org/maven2/studio/magemonkey/fabled-enchants/1.0.1-R0.3-SNAPSHOT)
-[![Build](https://github.com/magemonkeystudio/fabled-enchants/actions/workflows/devbuild.yml/badge.svg?branch=dev)](https://central.sonatype.com/repository/maven-snapshots/studio/magemonkey/fabled-enchants/1.0.1-R0.3-SNAPSHOT)
+[![Build](https://github.com/magemonkeystudio/fabled-enchants/actions/workflows/release.yml/badge.svg?branch=main)](https://repo1.maven.org/maven2/studio/magemonkey/fabled-enchants/1.0.1-R0.4-SNAPSHOT)
+[![Build](https://github.com/magemonkeystudio/fabled-enchants/actions/workflows/devbuild.yml/badge.svg?branch=dev)](https://central.sonatype.com/repository/maven-snapshots/studio/magemonkey/fabled-enchants/1.0.1-R0.4-SNAPSHOT)
 [![Discord](https://dcbadge.vercel.app/api/server/6UzkTe6RvW?style=flat)](https://discord.gg/6UzkTe6RvW)
 
 # FabledEnchants
@@ -16,7 +16,7 @@ or snapshots through Sonatype.
 <dependency>
     <groupId>studio.magemonkey</groupId>
     <artifactId>fabled-enchants</artifactId>
-    <version>1.0.1-R0.3-SNAPSHOT</version>
+    <version>1.0.1-R0.4-SNAPSHOT</version>
 </dependency>
 ```
 

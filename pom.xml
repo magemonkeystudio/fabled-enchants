@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>fabled-enchants</artifactId>
-    <version>1.0.1-R0.4-SNAPSHOT</version>
+    <version>1.0.1-R0.5-SNAPSHOT</version>
     <name>FabledEnchants</name>
     <packaging>jar</packaging>
     <description>FabledEnchants brings customization to enchantments. Change how common enchantments are, turn specific
