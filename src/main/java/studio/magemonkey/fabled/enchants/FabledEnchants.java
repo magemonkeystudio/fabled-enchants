@@ -1,5 +1,7 @@
 package studio.magemonkey.fabled.enchants;
 
+import lombok.Getter;
+import lombok.experimental.Accessors;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.Plugin;
@@ -29,12 +31,14 @@ public class FabledEnchants extends JavaPlugin implements EnchantmentRegistry {
 
     private final List<BaseListener> listeners = new ArrayList<>();
 
-    private static FabledEnchants enabled;
+    @Getter
+    @Accessors(fluent = true)
+    private static FabledEnchants inst;
 
     @Override
     public void onEnable() {
-        if (enabled != null) throw new IllegalStateException("Cannot enable multiple times!");
-        enabled = this;
+        if (inst != null) throw new IllegalStateException("Cannot enable multiple times!");
+        inst = this;
 
         Configuration.reload(this);
         Enchantability.init(this);
@@ -49,8 +53,8 @@ public class FabledEnchants extends JavaPlugin implements EnchantmentRegistry {
 
     @Override
     public void onDisable() {
-        if (enabled == null) throw new IllegalStateException("Plugin not enabled!");
-        enabled = null;
+        if (inst == null) throw new IllegalStateException("Plugin not enabled!");
+        inst = null;
 
         CommandManager.unregisterCommands(this);
         ENCHANTMENTS.clear();

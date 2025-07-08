@@ -11,13 +11,14 @@ import studio.magemonkey.fabled.Fabled;
 import studio.magemonkey.fabled.api.enums.ManaCost;
 import studio.magemonkey.fabled.api.player.PlayerData;
 import studio.magemonkey.fabled.api.skills.*;
+import studio.magemonkey.fabled.enchants.FabledEnchants;
 import studio.magemonkey.fabled.enchants.api.Cooldowns;
 import studio.magemonkey.fabled.enchants.api.CustomEnchantment;
 import studio.magemonkey.fabled.enchants.data.ConfigKey;
 import studio.magemonkey.fabled.enchants.data.Configuration;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2025 MageMonkeyStudio
  * fabled.studio.magemonkey.fabled.enchants.SkillEnchantment
  */
 @Getter
@@ -37,7 +38,7 @@ public class SkillEnchantment extends CustomEnchantment {
 
         skill = Fabled.getSkill(skillName);
         if (skill == null) {
-            System.out.println(data.getString(SKILL) + " is not a skill");
+            FabledEnchants.inst().getLogger().warning(data.getString(SKILL) + " is not a skill");
             return;
         }
 
