@@ -31,10 +31,13 @@ public class CmdBook implements IFunction {
             final ConfigurableCommand command,
             final Plugin plugin,
             final CommandSender sender,
-            final String[] args) {
+            final String[] args,
+            final boolean silent) {
 
         if (!(sender instanceof Player)) {
-            command.sendMessage(sender, NOT_PLAYER, "&4You must be a player to use this command");
+            if (!silent) {
+                command.sendMessage(sender, NOT_PLAYER, "&4You must be a player to use this command");
+            }
             return;
         }
 
@@ -64,6 +67,8 @@ public class CmdBook implements IFunction {
         }
         book.setItemMeta(meta);
         ((Player) sender).getInventory().addItem(book);
-        command.sendMessage(sender, SUCCESS, "&2You have received a book with all enchantment details");
+        if (!silent) {
+            command.sendMessage(sender, SUCCESS, "&2You have received a book with all enchantment details");
+        }
     }
 }

@@ -33,21 +33,28 @@ public class CmdAdd implements IFunction {
             final ConfigurableCommand command,
             final Plugin plugin,
             final CommandSender sender,
-            final String[] args) {
+            final String[] args,
+            final boolean silent) {
 
         if (!(sender instanceof Player)) {
-            command.sendMessage(sender, PLAYER_ONLY, ChatColor.DARK_RED + "Only players can use this command");
+            if (!silent) {
+                command.sendMessage(sender, PLAYER_ONLY, ChatColor.DARK_RED + "Only players can use this command");
+            }
             return;
         }
 
         if (args.length < 2) {
-            CommandManager.displayUsage(command, sender);
+            if (!silent) {
+                CommandManager.displayUsage(command, sender);
+            }
             return;
         }
 
         final Player player = (Player) sender;
         if (!isPresent(player.getEquipment().getItemInMainHand())) {
-            command.sendMessage(sender, NO_ITEM, ChatColor.DARK_RED + "You are not holding an item to enchants");
+            if (!silent) {
+                command.sendMessage(sender, NO_ITEM, ChatColor.DARK_RED + "You are not holding an item to enchants");
+            }
         }
 
         final StringBuilder builder = new StringBuilder(args[0]);
@@ -58,9 +65,11 @@ public class CmdAdd implements IFunction {
 
         final CustomEnchantment enchantment = FabledEnchants.getEnchantment(builder.toString());
         if (enchantment == null) {
-            command.sendMessage(sender,
-                    NOT_ENCHANTMENT,
-                    ChatColor.GOLD + builder.toString() + ChatColor.DARK_RED + " is not an enchantment");
+            if (!silent) {
+                command.sendMessage(sender,
+                        NOT_ENCHANTMENT,
+                        ChatColor.GOLD + builder.toString() + ChatColor.DARK_RED + " is not an enchantment");
+            }
             return;
         }
 
@@ -68,9 +77,11 @@ public class CmdAdd implements IFunction {
         try {
             level = Integer.parseInt(args[args.length - 1]);
         } catch (final Exception ex) {
-            command.sendMessage(sender,
-                    NOT_LEVEL,
-                    ChatColor.GOLD + args[args.length - 1] + ChatColor.DARK_RED + " is not a number");
+            if (!silent) {
+                command.sendMessage(sender,
+                        NOT_LEVEL,
+                        ChatColor.GOLD + args[args.length - 1] + ChatColor.DARK_RED + " is not a number");
+            }
             return;
         }
 
@@ -78,6 +89,8 @@ public class CmdAdd implements IFunction {
         GlowEffects.finalize(player.getInventory().getItemInMainHand());
         final PlayerEquips equips = Enchantments.getEquipmentData(player);
         Tasks.schedule(() -> equips.updateWeapon((player).getInventory()));
-        command.sendMessage(sender, SUCCESS, ChatColor.DARK_GREEN + "Added the enchantment successfully");
+        if (!silent) {
+            command.sendMessage(sender, SUCCESS, ChatColor.DARK_GREEN + "Added the enchantment successfully");
+        }
     }
 }

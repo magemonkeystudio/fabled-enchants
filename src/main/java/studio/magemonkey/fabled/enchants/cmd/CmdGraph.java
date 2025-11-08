@@ -41,7 +41,8 @@ public class CmdGraph implements IFunction {
             final ConfigurableCommand command,
             final Plugin plugin,
             final CommandSender sender,
-            final String[] args) {
+            final String[] args,
+            final boolean silent) {
 
         if (args.length >= 2) {
             try {
@@ -49,7 +50,9 @@ public class CmdGraph implements IFunction {
                 // Parse the item
                 final Material mat = Material.getMaterial(args[0].toUpperCase());
                 if (mat == null) {
-                    command.sendMessage(sender, INVALID_MATERIAL, "That is not a valid material");
+                    if (!silent) {
+                        command.sendMessage(sender, INVALID_MATERIAL, "That is not a valid material");
+                    }
                     return;
                 }
 
@@ -61,19 +64,25 @@ public class CmdGraph implements IFunction {
                 final CustomEnchantment enchant =
                         Vanilla.getEnchantment(name).orElse(FabledEnchants.getEnchantment(name));
                 if (enchant == null) {
-                    command.sendMessage(sender, INVALID_ENCHANTMENT, "&4That is not a valid enchantment");
+                    if (!silent) {
+                        command.sendMessage(sender, INVALID_ENCHANTMENT, "&4That is not a valid enchantment");
+                    }
                     return;
                 } else if (!enchant.canEnchantOnto(item)) {
-                    command.sendMessage(sender,
-                            INCOMPATIBLE_ENCHANTMENT,
-                            "&4That enchantment doesn't work on that item");
+                    if (!silent) {
+                        command.sendMessage(sender,
+                                INCOMPATIBLE_ENCHANTMENT,
+                                "&4That enchantment doesn't work on that item");
+                    }
                     return;
                 }
 
                 // Run the computation task (usually takes 5-10ms)
-                plugin.getServer()
-                        .getScheduler()
-                        .runTaskAsynchronously(plugin, () -> compute(enchant, sender, item));
+                if (!silent) {
+                    plugin.getServer()
+                            .getScheduler()
+                            .runTaskAsynchronously(plugin, () -> compute(enchant, sender, item));
+                }
             } catch (final Exception e) {
                 // Do nothing
             }

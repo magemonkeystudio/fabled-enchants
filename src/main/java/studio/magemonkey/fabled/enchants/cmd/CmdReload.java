@@ -19,11 +19,14 @@ public class CmdReload implements IFunction {
             final ConfigurableCommand configurableCommand,
             final Plugin plugin,
             final CommandSender commandSender,
-            final String[] strings) {
+            final String[] strings,
+            final boolean silent) {
 
         final FabledEnchants fabledEnchants = JavaPlugin.getPlugin(FabledEnchants.class);
         fabledEnchants.onDisable();
         fabledEnchants.onEnable();
-        commandSender.sendMessage(ChatColor.GREEN + "FabledEnchants has been reloaded!");
+        if (!silent) {
+            commandSender.sendMessage(ChatColor.GREEN + "FabledEnchants has been reloaded!");
+        }
     }
 }

@@ -29,27 +29,36 @@ public class CmdRemove implements IFunction {
             final ConfigurableCommand command,
             final Plugin plugin,
             final CommandSender sender,
-            final String[] strings) {
+            final String[] strings,
+            final boolean silent) {
 
         if (!(sender instanceof Player)) {
-            command.sendMessage(sender, NOT_PLAYER, "&4Only players can use this command");
+            if (!silent) {
+                command.sendMessage(sender, NOT_PLAYER, "&4Only players can use this command");
+            }
             return;
         }
 
         final Player    player = (Player) sender;
         final ItemStack item   = player.getEquipment().getItemInMainHand();
         if (!isPresent(item)) {
-            command.sendMessage(sender, NO_ITEM, "&4You don't have an item in your hand");
+            if (!silent) {
+                command.sendMessage(sender, NO_ITEM, "&4You don't have an item in your hand");
+            }
             return;
         }
 
         final Map<CustomEnchantment, Integer> enchantments = Enchantments.getAllEnchantments(item);
         if (enchantments.isEmpty()) {
-            command.sendMessage(sender, NO_ENCHANTS, "&4That item doesn't have any enchantments");
+            if (!silent) {
+                command.sendMessage(sender, NO_ENCHANTS, "&4That item doesn't have any enchantments");
+            }
             return;
         }
 
         Enchantments.removeAllEnchantments(item);
-        command.sendMessage(sender, REMOVED, "&2 Removed all enchantments from your held item");
+        if (!silent) {
+            command.sendMessage(sender, REMOVED, "&2 Removed all enchantments from your held item");
+        }
     }
 }
