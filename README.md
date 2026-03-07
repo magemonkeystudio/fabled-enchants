@@ -4,8 +4,8 @@
 
 # FabledEnchants
 
-If you wish to use FabledEnchants as a dependency in your projects, FabledEnchants is available through Maven Central
-or snapshots through Sonatype.
+If you wish to use FabledEnchants as a dependency in your projects, FabledEnchants is available through our repository.
+
 
 ```xml
 <repository>
