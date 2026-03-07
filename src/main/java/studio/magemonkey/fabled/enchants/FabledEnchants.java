@@ -22,7 +22,7 @@ import studio.magemonkey.fabled.enchants.vanilla.VanillaData;
 import java.util.*;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * studio.magemonkey.fabled.enchants.FabledEnchants
  */
 public class FabledEnchants extends JavaPlugin implements EnchantmentRegistry {

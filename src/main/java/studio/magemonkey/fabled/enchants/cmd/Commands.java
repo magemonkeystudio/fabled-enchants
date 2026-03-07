@@ -6,7 +6,7 @@ import studio.magemonkey.codex.mccore.commands.SenderType;
 import studio.magemonkey.fabled.enchants.FabledEnchants;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * cmd.studio.magemonkey.fabled.enchants.Commands
  */
 public class Commands {

@@ -9,7 +9,7 @@ import studio.magemonkey.codex.mccore.commands.IFunction;
 import studio.magemonkey.fabled.enchants.FabledEnchants;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * cmd.studio.magemonkey.fabled.enchants.CmdReload
  */
 public class CmdReload implements IFunction {

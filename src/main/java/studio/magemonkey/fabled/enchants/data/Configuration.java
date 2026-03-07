@@ -5,7 +5,7 @@ import studio.magemonkey.codex.mccore.config.parse.DataSection;
 import studio.magemonkey.fabled.enchants.FabledEnchants;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * data.studio.magemonkey.fabled.enchants.Configuration
  */
 public class Configuration {

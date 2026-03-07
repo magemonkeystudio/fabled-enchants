@@ -24,7 +24,7 @@ import java.util.UUID;
 import static studio.magemonkey.fabled.enchants.util.Utils.isPresent;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * listener.studio.magemonkey.fabled.enchants.ItemListener
  */
 public class ItemListener extends BaseListener {

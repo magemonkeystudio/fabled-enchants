@@ -3,7 +3,7 @@ package studio.magemonkey.fabled.enchants.api;
 import studio.magemonkey.codex.mccore.config.parse.DataSection;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * api.studio.magemonkey.fabled.enchants.Settings
  */
 public class Settings extends DataSection {

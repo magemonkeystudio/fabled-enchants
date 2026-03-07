@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 import static studio.magemonkey.fabled.enchants.util.Utils.isPresent;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * api.studio.magemonkey.fabled.enchants.Enchantments
  */
 public class Enchantments {

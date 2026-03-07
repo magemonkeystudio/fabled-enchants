@@ -18,7 +18,7 @@ import studio.magemonkey.fabled.enchants.data.ConfigKey;
 import studio.magemonkey.fabled.enchants.data.Configuration;
 
 /**
- * FabledEnchants © 2025 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * fabled.studio.magemonkey.fabled.enchants.SkillEnchantment
  */
 @Getter

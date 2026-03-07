@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * mechanics.studio.magemonkey.fabled.enchants.EnchantmentMerger
  */
 public class EnchantmentMerger {

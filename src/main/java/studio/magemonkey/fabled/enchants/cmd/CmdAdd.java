@@ -17,7 +17,7 @@ import studio.magemonkey.fabled.enchants.data.PlayerEquips;
 import static studio.magemonkey.fabled.enchants.util.Utils.isPresent;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * cmd.studio.magemonkey.fabled.enchants.CmdAdd
  */
 public class CmdAdd implements IFunction {

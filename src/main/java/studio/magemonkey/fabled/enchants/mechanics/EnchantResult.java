@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * mechanics.studio.magemonkey.fabled.enchants.EnchantResult
  */
 public class EnchantResult {

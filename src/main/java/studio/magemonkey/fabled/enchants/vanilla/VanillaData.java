@@ -5,7 +5,7 @@ import studio.magemonkey.fabled.enchants.api.CustomEnchantment;
 import studio.magemonkey.fabled.enchants.api.ItemSet;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * vanilla.studio.magemonkey.fabled.enchants.VanillaData
  */
 public enum VanillaData {

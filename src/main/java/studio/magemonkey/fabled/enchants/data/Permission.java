@@ -1,7 +1,7 @@
 package studio.magemonkey.fabled.enchants.data;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * data.studio.magemonkey.fabled.enchants.Permission
  */
 public class Permission {

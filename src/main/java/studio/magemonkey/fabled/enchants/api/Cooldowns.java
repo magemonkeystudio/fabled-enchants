@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * api.studio.magemonkey.fabled.enchants.Cooldowns
  * <p>
  * Helper class for managing cooldowns for enchantments

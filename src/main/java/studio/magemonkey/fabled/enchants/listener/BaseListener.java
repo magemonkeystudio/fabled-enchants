@@ -7,7 +7,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import studio.magemonkey.fabled.enchants.FabledEnchants;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * listener.studio.magemonkey.fabled.enchants.BaseListener
  */
 public abstract class BaseListener implements Listener {

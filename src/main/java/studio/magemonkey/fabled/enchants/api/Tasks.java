@@ -7,7 +7,7 @@ import studio.magemonkey.fabled.enchants.FabledEnchants;
 import java.util.Objects;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * api.studio.magemonkey.fabled.enchants.Tasks
  * <p>
  * Utility class providing ways to register tasks through FabledEnchants

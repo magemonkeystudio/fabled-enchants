@@ -14,7 +14,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * mechanics.studio.magemonkey.fabled.enchants.EnchantingMechanics
  */
 public class EnchantingMechanics {

@@ -8,7 +8,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import studio.magemonkey.codex.util.NamespaceResolver;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * api.studio.magemonkey.fabled.enchants.GlowEffects
  */
 public class GlowEffects {

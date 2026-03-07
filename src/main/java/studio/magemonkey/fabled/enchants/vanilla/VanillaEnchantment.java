@@ -11,7 +11,7 @@ import studio.magemonkey.fabled.enchants.data.Permission;
 import java.util.Map;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * vanilla.studio.magemonkey.fabled.enchants.VanillaEnchantment
  */
 public class VanillaEnchantment extends CustomEnchantment {

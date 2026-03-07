@@ -12,7 +12,7 @@ import studio.magemonkey.fabled.enchants.mechanics.EnchantingMechanics;
 import java.util.Random;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * listener.studio.magemonkey.fabled.enchants.FishingListener
  */
 public class FishingListener extends BaseListener {

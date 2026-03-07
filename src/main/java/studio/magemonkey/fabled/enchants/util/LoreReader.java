@@ -7,7 +7,7 @@ import studio.magemonkey.fabled.enchants.api.CustomEnchantment;
 import java.util.Objects;
 
 /**
- * FabledEnchants © 2024 MageMonkeyStudio
+ * FabledEnchants © 2026 VoidEdge
  * util.studio.magemonkey.fabled.enchants.LoreReader
  */
 public class LoreReader {
