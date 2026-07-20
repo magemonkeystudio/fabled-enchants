@@ -1,5 +1,5 @@
-[![Build](https://github.com/magemonkeystudio/fabled-enchants/actions/workflows/release.yml/badge.svg?branch=main)](https://repo.travja.dev/releases/studio/magemonkey/fabled-enchants/1.0.1-R0.6-SNAPSHOT)
-[![Build](https://github.com/magemonkeystudio/fabled-enchants/actions/workflows/devbuild.yml/badge.svg?branch=dev)](https://repo.travja.dev/snapshots/studio/magemonkey/fabled-enchants/1.0.1-R0.6-SNAPSHOT)
+[![Build](https://github.com/magemonkeystudio/fabled-enchants/actions/workflows/release.yml/badge.svg?branch=main)](https://repo.travja.dev/releases/studio/magemonkey/fabled-enchants/1.0.1-R0.7-SNAPSHOT)
+[![Build](https://github.com/magemonkeystudio/fabled-enchants/actions/workflows/devbuild.yml/badge.svg?branch=dev)](https://repo.travja.dev/snapshots/studio/magemonkey/fabled-enchants/1.0.1-R0.7-SNAPSHOT)
 [![Discord](https://dcbadge.limes.pink/api/server/mQrkW4htUA?style=flat)](https://discord.gg/mQrkW4htUA)
 
 # FabledEnchants
@@ -16,7 +16,7 @@ If you wish to use FabledEnchants as a dependency in your projects, FabledEnchan
 <dependency>
     <groupId>studio.magemonkey</groupId>
     <artifactId>fabled-enchants</artifactId>
-    <version>1.0.1-R0.6-SNAPSHOT</version>
+    <version>1.0.1-R0.7-SNAPSHOT</version>
 </dependency>
 ```
 
