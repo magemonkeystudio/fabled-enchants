@@ -6,6 +6,7 @@ import studio.magemonkey.codex.mccore.config.CommentedConfig;
 import studio.magemonkey.codex.mccore.config.parse.DataSection;
 import studio.magemonkey.fabled.enchants.FabledEnchants;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,8 +18,8 @@ import java.util.stream.Collectors;
  */
 public class Enchantability {
 
-    private static final String TYPES          = "types";
-    private static final String ENCHANTABILITY = "enchantability";
+    static final String         TYPES          = "types";
+    static final String         ENCHANTABILITY = "enchantability";
     private static final String DEFAULT        = "default";
 
     private static final Map<Material, Integer> VALUES = new HashMap<>();
@@ -60,20 +61,33 @@ public class Enchantability {
     }
 
     private static void checkDefaults(final CommentedConfig config) {
-        final DataSection data = config.getConfig();
-        if (!config.getConfigFile().exists()) {
-            for (final MaterialClass materialClass : MaterialClass.values()) {
-                populate(data, ARMOR, materialClass.name, "armor", materialClass.armor);
-                populate(data, WEAPON, materialClass.name, "tool", materialClass.weapon);
-            }
+        final DataSection data    = config.getConfig();
+        boolean           changed = false;
+
+        for (final MaterialClass materialClass : MaterialClass.values()) {
+            changed |= populate(data, ARMOR, materialClass.name, "armor", materialClass.armor);
+            changed |= populate(data, WEAPON, materialClass.name, "tool", materialClass.weapon);
         }
+
         if (!data.has(DEFAULT)) {
             data.set(DEFAULT, 1);
+            changed = true;
+        }
+
+        if (changed) {
             config.save();
         }
     }
 
-    private static void populate(
+    /**
+     * Ensures the config has an entry with all currently-valid material types for the given
+     * material class/category, without touching an existing entry's enchantability value or
+     * overwriting types that were removed by the user. Only material names that actually exist
+     * on the running server are written, so older servers won't get bogus entries (e.g. spears
+     * before they existed), and newer servers will pick up new types on the next load without
+     * needing the config regenerated.
+     */
+    static boolean populate(
             final DataSection data,
             final List<String> names,
             final String material,
@@ -81,27 +95,55 @@ public class Enchantability {
             final int value) {
 
         if (value == 0) {
-            return;
+            return false;
         }
 
-        final List<String> types   = names.stream().map(type -> material + "_" + type).collect(Collectors.toList());
-        final DataSection  section = data.createSection(material.toLowerCase() + "-" + category);
-        section.set(TYPES, types);
-        section.set(ENCHANTABILITY, value);
+        final List<String> types = names.stream()
+                .map(type -> material + "_" + type)
+                .filter(type -> Material.matchMaterial(type) != null)
+                .collect(Collectors.toList());
+        if (types.isEmpty()) {
+            return false;
+        }
+
+        final String sectionKey = material.toLowerCase() + "-" + category;
+
+        if (!data.has(sectionKey)) {
+            final DataSection section = data.createSection(sectionKey);
+            section.set(TYPES, types);
+            section.set(ENCHANTABILITY, value);
+            return true;
+        }
+
+        final DataSection  section = data.getSection(sectionKey);
+        final List<String> existing = section.getList(TYPES);
+        final List<String> merged  = new ArrayList<>(existing);
+        boolean            added   = false;
+        for (final String type : types) {
+            if (!merged.contains(type)) {
+                merged.add(type);
+                added = true;
+            }
+        }
+        if (added) {
+            section.set(TYPES, merged);
+        }
+        return added;
     }
 
-    private static final List<String> ARMOR = ImmutableList.<String>builder()
+    static final List<String> ARMOR = ImmutableList.<String>builder()
             .add("BOOTS")
             .add("CHESTPLATE")
             .add("HELMET")
             .add("LEGGINGS")
             .build();
 
-    private static final List<String> WEAPON = ImmutableList.<String>builder()
+    static final List<String> WEAPON = ImmutableList.<String>builder()
             .add("AXE")
             .add("HOE")
             .add("PICKAXE")
             .add("SHOVEL")
+            .add("SPEAR")
             .add("SWORD")
             .build();
 

@@ -28,10 +28,10 @@ public enum VanillaData {
     DAMAGE_ALL(ItemSet.WEAPONS, ItemSet.AXES, 5, 10, 1, 11, 9, 1, true, "damage"),
     DAMAGE_ARTHROPODS(ItemSet.WEAPONS, ItemSet.AXES, 5, 5, 5, 8, 12, 2, true, "damage"),
     DAMAGE_UNDEAD(ItemSet.WEAPONS, ItemSet.AXES, 5, 5, 5, 8, 12, 2, true, "damage"),
-    FIRE_ASPECT(ItemSet.SWORDS, 2, 2, 10, 20, 30, 4, true),
-    KNOCKBACK(ItemSet.SWORDS, 2, 5, 5, 20, 30, 2, true),
-    LOOT_BONUS_MOBS(ItemSet.SWORDS, 3, 2, 15, 9, 41, 4, true),
-    SWEEPING_EDGE(ItemSet.SWORDS, 3, 1, 5, 9, 6, 4, true),
+    FIRE_ASPECT(ItemSet.MELEE, 2, 2, 10, 20, 30, 4, true),
+    KNOCKBACK(ItemSet.MELEE, 2, 5, 5, 20, 30, 2, true),
+    LOOT_BONUS_MOBS(ItemSet.MELEE, 3, 2, 15, 9, 41, 4, true),
+    SWEEPING_EDGE(ItemSet.MELEE, 3, 1, 5, 9, 6, 4, true),
 
     // --- Tools --- //
     DIG_SPEED(ItemSet.TOOLS, ItemSet.SHEARS, 5, 10, 1, 10, 40, 1, true, CustomEnchantment.DEFAULT_GROUP),
